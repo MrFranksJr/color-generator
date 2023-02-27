@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <!-- Title, desc and OG sets-->
+        <meta name="author" content="Franky Jr Blondeel">
+        <meta name="description" content="ColorPal - your favorite color generator" />
+        <meta property="og:title" content="ColorPal" />
+        <meta property="og:url" content="https://bored-botz.netlify.app/" />
+        <meta property="og:description" content="Color Pal is a lightweight app to quickly generate you a palette of matching colors" />
+        <meta property="og:image" content="https://bored-botz.netlify.app/images/icons/regularOG.png" />
+        <title>ColorPal 🎨 - your favorite color generator</title>
+        <!-- style sets & fonts-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <!-- meta sets-->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content= "width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale = 1.0">
+        <!-- icon sets-->
+        <link rel="icon" href="/images/icons/favicon.ico" sizes="any"><!-- 32×32 -->
+        <link rel="icon" href="/images/icons/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png"><!-- 180×180 -->
+        <link rel="manifest" href="/manifest/manifest.webmanifest">
+    </head>
+    <body>
+        <header>
+                <h1>ColorPal</h1>
+        </header>
+        <main>
+            <div class="options-bar">
+                <div class="color-options">
+                    <form id="color-options-form">
+                        <label for="color-picker" form="color-options-form">Pick a color:</label>
+                        <input type="color" id="color-picker" form="color-options-form">
+                        <label for="color-options-dd" form="color-options-form">Generation mode:</label>
+                        <select id="color-options-dd" form="color-options-form">
+                            <option value="monochrome">Monochrome</option>
+                            <option value="monochrome-dark">Monochrome Dark</option>
+                            <option value="monochrome-light">Monochrome Light</option>
+                            <option value="analogic">Analogic</option>
+                            <option value="complement">Complement</option>
+                            <option value="analogic-complement">Analogic Complement</option>
+                            <option value="triad">Triad</option>
+                            <option value="quad">Quad</option>
+                        </select>
+                        <label for="color-number" form="color-options-form"># of colors:</label>
+                        <input type="number" id="color-number" name="tentacles" min="2" max="10" value="5">
+                        <button type="submit" for="color-options-form">Submit</button>
+                    </form>
+
+                </div>
+                <div class="tips-area">
+                    You can use spacebar to quickly generate a new palette!
+                </div>
+            </div>
+            <div class="color-area">
+                <div class="generator-color"></div>
+                <div class="generator-color"></div>
+                <div class="generator-color"></div>
+                <div class="generator-color"></div>
+                <div class="generator-color"></div>
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                Designed by <a href="https://github.com/MrFranksJr" target="_blank">Franky Jr Blondeel</a>
+            </div>
+        </footer>
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
