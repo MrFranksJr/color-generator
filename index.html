@@ -27,10 +27,10 @@
         <main>
             <div class="options-bar">
                 <div class="color-options">
-                    <form id="color-options-form">
-                        <label for="color-picker" form="color-options-form">Pick a color:</label>
+                    <form id="color-options-form" onsubmit="event.preventDefault()">
+                        <label for="color-picker" form="color-options-form">Color:</label>
                         <input type="color" id="color-picker" form="color-options-form">
-                        <label for="color-options-dd" form="color-options-form">Generation mode:</label>
+                        <label for="color-options-dd" form="color-options-form">Mode:</label>
                         <select id="color-options-dd" form="color-options-form">
                             <option value="monochrome">Monochrome</option>
                             <option value="monochrome-dark">Monochrome Dark</option>
@@ -43,7 +43,6 @@
                         </select>
                         <label for="color-number" form="color-options-form"># of colors:</label>
                         <input type="number" id="color-number" name="tentacles" min="2" max="10" value="5">
-                        <button type="submit" for="color-options-form">Submit</button>
                     </form>
 
                 </div>
@@ -51,19 +50,10 @@
                     You can use spacebar to quickly generate a new palette!
                 </div>
             </div>
-            <div class="color-area">
-                <div class="generator-color"></div>
-                <div class="generator-color"></div>
-                <div class="generator-color"></div>
-                <div class="generator-color"></div>
-                <div class="generator-color"></div>
+            <div class="color-area" id="color-area">
+                Loading...
             </div>
         </main>
-        <footer>
-            <div class="container">
-                Designed by <a href="https://github.com/MrFranksJr" target="_blank">Franky Jr Blondeel</a>
-            </div>
-        </footer>
         <script src="index.js" type="module"></script>
     </body>
 </html>
