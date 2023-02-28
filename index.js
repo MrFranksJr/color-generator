@@ -61,13 +61,15 @@ function buildColorHtml(array) {
 }
 
 function onLoadState() {
-    document.getElementsByTagName('header')[0].style.transform = 'unset'
-    setTimeout( () => {
-        document.getElementsByTagName('main')[0].style.opacity = '100'
-    }, 500)
     document.getElementById('color-picker').value = getRandomColor()
     document.getElementById('color-options-dd').value = modesArray[randomIntFromInterval(0,7)]
     fetchColors()
 }
 
-window.onload = onLoadState()
+window.onload = function () {
+    document.getElementsByTagName('header')[0].style.transform = 'unset'
+    setTimeout( () => {
+        document.getElementsByTagName('main')[0].style.opacity = '100'
+    }, 500)
+    onLoadState()
+}
