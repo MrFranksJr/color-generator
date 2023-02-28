@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    font-family: 'Baloo Tamma 2', cursive;
 }
 
 header {
@@ -20,16 +21,28 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s ease-in-out;
+    transform: scale(2) translate(0, 200%);
+}
+
+.logo {
+    height: 80%;
+    margin-right: 0.5rem;
 }
 
 h1 {
     margin: 0;
+    font-family: 'Tilt Warp', cursive;
+    font-size: 2.5em;
+    font-weight: 800;
 }
 
 main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    transition: 0.5s;
+    opacity: 0;
 }
 
 .options-bar {
@@ -38,6 +51,8 @@ main {
     justify-content: space-between;
     align-items: center;
     height: 50px;
+    padding: 0 1.5rem;
+    border: 1px solid #cecece;
 }
 
 form {
@@ -49,6 +64,10 @@ form {
     flex: 1;
 }
 
+label {
+    margin: 0 0 0 1rem;
+}
+
 .generator-color {
     flex: 1;
     display: flex;
@@ -56,22 +75,26 @@ form {
     justify-content: flex-end;
     align-items: center;
     gap: 2rem;
-
+    opacity: 0;
+    transition: 1s;
 }
 
 .hex-text {
     font-weight: 800;
+    cursor: pointer;
 }
 
 .name-text {
     padding-bottom: 2rem;
+    cursor: pointer;
 }
 
 .rgb-text,
 .hsl-text,
 .hsv-text {
     opacity: 0;
-    transition: 0.3s ease;
+    transition: 0.5s ease-out;
+    cursor: pointer;
 }
 
 .generator-color:hover .rgb-text,

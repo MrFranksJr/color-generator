@@ -12,7 +12,7 @@ document.body.onkeyup = function(e) {
         e.code == "Space" ||      
         e.keyCode == 32      
     ) {
-        startUpState()
+        onLoadState()
     }
   }
 
@@ -28,15 +28,19 @@ function fetchColors() {
         .then(res => res.json())
         .then(data => {
             colorsArray = data.colors
-            console.log(colorsArray)
             renderColors(colorsArray)
             console.log(data.colors)
         })
 }
 
 function renderColors(arr) {
-    const colorsHtml = buildColorHtml(arr)
-    document.getElementById('color-area').innerHTML = colorsHtml
+    document.getElementById('color-area').innerHTML = buildColorHtml(arr)
+    const allColorBlocks = document.getElementsByClassName('generator-color')
+    for (let colorBlock of allColorBlocks) {
+        setTimeout( () => {
+            colorBlock.style.opacity = '100'
+        }, randomIntFromInterval(50, 350))
+    }
 }
 
 function buildColorHtml(array) {
@@ -44,7 +48,7 @@ function buildColorHtml(array) {
     for (let color of array) {
         const counterColor = invert(color.hex.value, true)
         colorHtml += `
-        <div class="generator-color" style='background-color:${color.hex.value}'>
+        <div class="generator-color" style='background-color:${color.hex.value};'>
             <div class="rgb-text" style='color:${counterColor}'>${color.rgb.value}</div>
             <div class="color-text hsl-text" style='color:${counterColor}'>${color.hsl.value}</div>
             <div class="color-text hsv-text" style='color:${counterColor}'>${color.hsv.value}</div>
@@ -56,10 +60,14 @@ function buildColorHtml(array) {
     return colorHtml
 }
 
-function startUpState() {
+function onLoadState() {
+    document.getElementsByTagName('header')[0].style.transform = 'unset'
+    setTimeout( () => {
+        document.getElementsByTagName('main')[0].style.opacity = '100'
+    }, 500)
     document.getElementById('color-picker').value = getRandomColor()
     document.getElementById('color-options-dd').value = modesArray[randomIntFromInterval(0,7)]
     fetchColors()
 }
 
-window.onload = startUpState()
+window.onload = onLoadState()
