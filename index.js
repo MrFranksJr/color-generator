@@ -1,4 +1,5 @@
 import { getRandomColor, modesArray, randomIntFromInterval } from "./data/utils.js"
+import invert from 'invert-color'
 
 //consts and lets
 const colorApiUrl = 'https://www.thecolorapi.com/scheme'
@@ -41,8 +42,15 @@ function renderColors(arr) {
 function buildColorHtml(array) {
     let colorHtml = ''
     for (let color of array) {
+        const counterColor = invert(color.hex.value, true)
         colorHtml += `
-        <div class="generator-color" style='background-color:${color.hex.value}'></div>
+        <div class="generator-color" style='background-color:${color.hex.value}'>
+            <div class="rgb-text" style='color:${counterColor}'>${color.rgb.value}</div>
+            <div class="color-text hsl-text" style='color:${counterColor}'>${color.hsl.value}</div>
+            <div class="color-text hsv-text" style='color:${counterColor}'>${color.hsv.value}</div>
+            <div class="color-text hex-text" style='color:${counterColor}'>${color.hex.value}</div>
+            <div class="color-text name-text" style='color:${counterColor}'>${color.name.value}</div>
+        </div>
         `
     }
     return colorHtml
