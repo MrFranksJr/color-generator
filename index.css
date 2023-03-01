@@ -37,6 +37,11 @@ h1 {
     font-weight: 800;
 }
 
+span {
+    margin: 0;
+    padding: 0;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -101,4 +106,28 @@ label {
 .generator-color:hover .hsv-text,
 .generator-color:hover .hsl-text {
     opacity: 100;
+}
+
+.c {
+    color: #AD1745;
+}
+
+.o {
+    color: #027B93;
+}
+
+.l {
+    color: #C5CC30;
+}
+
+.r {
+    color: #84A37A;
+}
+
+.p {
+    color: #F77E29;
+}
+
+.a {
+    color: #FEBC22;
 }

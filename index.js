@@ -67,8 +67,8 @@ function onLoadState() {
 }
 
 window.onload = function () {
-    document.getElementsByTagName('header')[0].style.transform = 'unset'
     setTimeout( () => {
+        document.getElementsByTagName('header')[0].style.transform = 'unset'
         document.getElementsByTagName('main')[0].style.opacity = '100'
     }, 500)
     onLoadState()
