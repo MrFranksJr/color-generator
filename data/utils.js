@@ -1,4 +1,4 @@
-export { getRandomColor, modesArray, randomIntFromInterval }
+export { getRandomColor, modesArray, randomIntFromInterval, clickToCopy }
 
 const modesArray = [
     "monochrome",
@@ -21,7 +21,15 @@ function getRandomColor() {
 }
 
 function randomIntFromInterval(min, max) { // min and max included
-    const num = Math.floor(Math.random() * (max - min + 1) + min)
-    console.log(num)
-    return num
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function clickToCopy(elementId) {
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(document.getElementById(elementId).previousElementSibling.textContent)
+    document.getElementById(elementId).textContent = "Copied!"
+    //reset
+    setTimeout(function() {
+        document.getElementById(elementId).textContent = "Click to copy"
+    }, 3000)
 }

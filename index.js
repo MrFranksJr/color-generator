@@ -1,22 +1,10 @@
-import { getRandomColor, modesArray, randomIntFromInterval } from "./data/utils.js"
+import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy } from "./data/utils.js"
 import invert from 'invert-color'
 
 //consts and lets
 const colorApiUrl = 'https://www.thecolorapi.com/scheme'
 const inputForm = document.getElementById('color-options-form')
 let colorsArray = []
-
-//eventlisteners
-document.body.onkeyup = function(e) {
-    if (e.key == " " ||
-        e.code == "Space" ||      
-        e.keyCode == 32      
-    ) {
-        onLoadState()
-    }
-  }
-
-inputForm.addEventListener('change', fetchColors)
 
 ////////////////////////FUNCTIONS////////////////////
 function fetchColors() {
@@ -29,7 +17,6 @@ function fetchColors() {
         .then(data => {
             colorsArray = data.colors
             renderColors(colorsArray)
-            console.log(data.colors)
         })
 }
 
@@ -49,11 +36,11 @@ function buildColorHtml(array) {
         const counterColor = invert(color.hex.value, true)
         colorHtml += `
         <div class="generator-color" style='background-color:${color.hex.value};'>
-            <div class="rgb-text" style='color:${counterColor}'>${color.rgb.value}</div>
-            <div class="color-text hsl-text" style='color:${counterColor}'>${color.hsl.value}</div>
-            <div class="color-text hsv-text" style='color:${counterColor}'>${color.hsv.value}</div>
-            <div class="color-text hex-text" style='color:${counterColor}'>${color.hex.value}</div>
-            <div class="color-text name-text" style='color:${counterColor}'>${color.name.value}</div>
+            <div class="color-text rgb-text" style='color:${counterColor}'><p data-clickable="${color.rgb.value}">${color.rgb.value}</p><span class="copy-text" id="${color.rgb.value}">Click to copy</span></div>
+            <div class="color-text hsl-text" style='color:${counterColor}'><p data-clickable="${color.hsl.value}">${color.hsl.value}</p><span class="copy-text" id="${color.hsl.value}">Click to copy</span></div>
+            <div class="color-text hsv-text" style='color:${counterColor}'><p data-clickable="${color.hsv.value}">${color.hsv.value}</p><span class="copy-text" id="${color.hsv.value}">Click to copy</span></div>
+            <div class="color-text hex-text" style='color:${counterColor}'><p data-clickable="${color.hex.value}">${color.hex.value}</p><span class="copy-text" id="${color.hex.value}">Click to copy</span></div>
+            <div class="color-text name-text" style='color:${counterColor}'><p data-clickable="${color.name.value}">${color.name.value}</p><span class="copy-text" id="${color.name.value}">Click to copy</span></div>
         </div>
         `
     }
@@ -70,6 +57,25 @@ window.onload = function () {
     setTimeout( () => {
         document.getElementsByTagName('header')[0].style.transform = 'unset'
         document.getElementsByTagName('main')[0].style.opacity = '100'
-    }, 500)
+    }, 800)
     onLoadState()
 }
+
+//eventlisteners
+document.body.onkeyup = function(e) {
+    if (e.key == " " ||
+        e.code == "Space" ||      
+        e.keyCode == 32      
+    ) {
+        onLoadState()
+    }
+  }
+
+inputForm.addEventListener('change', fetchColors)
+
+document.addEventListener("click", function(e) {
+    if (e.target.dataset.clickable) {
+        console.log(e.target.dataset.clickable)
+        clickToCopy(e.target.dataset.clickable)
+    }
+})
