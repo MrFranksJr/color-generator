@@ -94,7 +94,7 @@ form {
     display: flex;
     flex: 1;
     height: 100%;
-    transition: filter 0.5s ease-in-out;
+    transition: filter 0.2s ease-in-out;
 }
 
 .generator-color {
@@ -239,7 +239,7 @@ select {
         opacity: 0;
         justify-content: flex-start;
         align-items: flex-start;
-        transition: 0.5s ease-in-out;
+        
     }
     #color-options-form {
         display: flex;
@@ -372,4 +372,5 @@ select {
 
 .color-options.active {
     opacity: 100;
+    transition: 0.2s ease-in-out;
 }
