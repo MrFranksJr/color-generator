@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Tilt+Warp&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d681ac91cb.js" crossorigin="anonymous"></script>
         <!-- meta sets-->
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content= "width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale = 1.0">
@@ -22,8 +23,8 @@
         <link rel="icon" href="/assets/icon-97a3b60e.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/assets/apple-touch-icon-98d77040.png"><!-- 180×180 -->
         <link rel="manifest" href="data:application/manifest+json;base64,ewogICJpY29ucyI6IFsKICAgIHsgInNyYyI6ICJodHRwczovL2NvbG9ycGFsLWdlbmVyYXRvci5uZXRsaWZ5LmFwcC9hc3NldHMvaWNvbi0xOTIucG5nIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInNpemVzIjogIjE5MngxOTIiIH0sCiAgICB7ICJzcmMiOiAiaHR0cHM6Ly9jb2xvcnBhbC1nZW5lcmF0b3IubmV0bGlmeS5hcHAvYXNzZXRzL2ljb24tNTEyLnBuZyIsICJ0eXBlIjogImltYWdlL3BuZyIsICJzaXplcyI6ICI1MTJ4NTEyIiB9CiAgXQp9">
-      <script type="module" crossorigin src="/assets/index-8e3567c8.js"></script>
-      <link rel="stylesheet" href="/assets/index-e8a27752.css">
+      <script type="module" crossorigin src="/assets/index-b5a1c856.js"></script>
+      <link rel="stylesheet" href="/assets/index-2f91c65c.css">
     </head>
     <body>
         <header>
@@ -34,7 +35,8 @@
         </header>
         <main>
             <div class="options-bar">
-                <div class="color-options">
+                <i class="fa-solid fa-rotate refresh-button" id="refresh-button"></i>
+                <div class="color-options" id="color-options">
                     <form id="color-options-form" onsubmit="event.preventDefault()">
                         <label for="color-picker" form="color-options-form">Color:</label>
                         <input type="color" id="color-picker" form="color-options-form">
@@ -52,7 +54,11 @@
                         <label for="color-number" form="color-options-form">Number of colors:</label>
                         <input type="number" id="color-number" name="tentacles" min="2" max="10" value="5">
                     </form>
-
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
                 <div class="tips-area">
                     You can use spacebar to quickly generate a new palette!
