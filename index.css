@@ -56,21 +56,21 @@ main {
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    padding: 0 1.5rem;
-    border: 1px solid #cecece;
+    padding: 0.8rem;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
 }
 
 form {
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .color-area {
     display: flex;
     flex: 1;
-}
-
-label {
-    margin: 0 0 0 1rem;
 }
 
 .generator-color {
@@ -93,6 +93,11 @@ label {
 .name-text {
     padding-bottom: 2rem;
     cursor: pointer;
+}
+
+input,
+select {
+    margin-right: 0.8rem;
 }
 
 .rgb-text,
