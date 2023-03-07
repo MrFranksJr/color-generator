@@ -1,4 +1,4 @@
-export { getRandomColor, modesArray, randomIntFromInterval, clickToCopy }
+export { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges/* calculateBarWidth */ }
 
 const modesArray = [
     "monochrome",
@@ -32,4 +32,108 @@ function clickToCopy(elementId) {
     setTimeout(function() {
         document.getElementById(elementId).textContent = "Click to copy"
     }, 3000)
+}
+
+function responsiveMenu() {
+        colorArea.classList.toggle('blur')
+        document.getElementById('color-options').classList.toggle("active")
+        document.getElementById('hamburger').classList.toggle("active")
+}
+
+let currentRotation = 0
+function refreshButton() {
+    currentRotation += 360
+    document.getElementById('refresh-button').style.color = document.getElementById('color-picker').value
+    document.getElementById('refresh-button').style.transform = `rotate(${currentRotation}deg)`
+}
+
+
+
+const colorArea = document.getElementById('color-area')
+const generatorColors = document.getElementsByClassName('generator-color')
+const allHsvText = document.getElementsByClassName('hsv-text')
+const allHslText = document.getElementsByClassName('hsl-text')
+const allRgbText = document.getElementsByClassName('rgb-text')
+const allNameText = document.getElementsByClassName('name-text')
+const allHexText = document.getElementsByClassName('hex-text')
+const allCopyText = document.getElementsByClassName('copy-text')
+
+function windowChanges() {
+    const pixelWidth = window.innerWidth
+    const colorCount = document.getElementById('color-number').value
+
+    if (pixelWidth/colorCount < 100) {
+        addAllSmallClasses()
+        removeAllMediumClasses()
+    }
+    else if (pixelWidth/colorCount > 100 && pixelWidth/colorCount < 140) {
+        removeAllSmallClasses()
+        addAllMediumClasses()
+    }
+    else if (pixelWidth/colorCount > 140) {
+        removeAllSmallClasses()
+        removeAllMediumClasses()
+    }
+}
+
+function addAllSmallClasses() {
+    colorArea.classList.add('small')
+    addSmallClass(generatorColors)
+    addSmallClass(allHslText)
+    addSmallClass(allHsvText)
+    addSmallClass(allNameText)
+    addSmallClass(allRgbText)
+    addSmallClass(allHexText)
+}
+function addSmallClass(elemArray) {
+    for (let elem of elemArray) {
+        elem.classList.add('small')
+    }
+}
+
+function removeAllSmallClasses() {
+    colorArea.classList.remove('small')
+    removeSmallClass(generatorColors)
+    removeSmallClass(allHslText)
+    removeSmallClass(allHsvText)
+    removeSmallClass(allNameText)
+    removeSmallClass(allRgbText)
+    removeSmallClass(allHexText)
+}
+function removeSmallClass(elemArray) {
+    for (let elem of elemArray) {
+        elem.classList.remove('small')
+    }
+}
+
+function addAllMediumClasses() {
+    colorArea.classList.add('medium')
+    addMediumClass(allHslText)
+    addMediumClass(allHsvText)
+    addMediumClass(allNameText)
+    addMediumClass(allRgbText)
+    addMediumClass(allHexText)
+    addMediumClass(generatorColors)
+    addMediumClass(allCopyText)
+}
+function addMediumClass(elemArray) {
+    for (let elem of elemArray) {
+        elem.classList.add('medium')
+    }
+}
+
+function removeAllMediumClasses() {
+    colorArea.classList.remove('medium')
+    removeMediumClass(generatorColors)
+    removeMediumClass(allHslText)
+    removeMediumClass(allHsvText)
+    removeMediumClass(allNameText)
+    removeMediumClass(allRgbText)
+    removeMediumClass(allHexText)
+    removeMediumClass(allCopyText)
+}
+function removeMediumClass(elemArray) {
+    for (let elem of elemArray) {
+        elem.classList.remove('medium')
+    }
 }

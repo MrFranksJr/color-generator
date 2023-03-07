@@ -1,4 +1,4 @@
-import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy } from "./data/utils.js"
+import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges /* calculateBarWidth */ } from "./data/utils.js"
 import invert from 'invert-color'
 
 //consts and lets
@@ -17,6 +17,7 @@ function fetchColors() {
         .then(data => {
             colorsArray = data.colors
             renderColors(colorsArray)
+            windowChanges()
         })
 }
 
@@ -51,6 +52,7 @@ function onLoadState() {
     document.getElementById('color-picker').value = getRandomColor()
     document.getElementById('color-options-dd').value = modesArray[randomIntFromInterval(0,7)]
     fetchColors()
+    refreshButton()
 }
 
 window.onload = function () {
@@ -75,7 +77,13 @@ inputForm.addEventListener('change', fetchColors)
 
 document.addEventListener("click", function(e) {
     if (e.target.dataset.clickable) {
-        console.log(e.target.dataset.clickable)
         clickToCopy(e.target.dataset.clickable)
     }
+})
+
+document.getElementById('hamburger').addEventListener("click", responsiveMenu)
+document.getElementById('refresh-button').addEventListener("click", onLoadState)
+
+window.addEventListener("resize", () => {
+    windowChanges()
 })

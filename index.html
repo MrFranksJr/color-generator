@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Tilt+Warp&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d681ac91cb.js" crossorigin="anonymous"></script>
         <!-- meta sets-->
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content= "width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale = 1.0">
@@ -32,7 +33,8 @@
         </header>
         <main>
             <div class="options-bar">
-                <div class="color-options">
+                <i class="fa-solid fa-rotate refresh-button" id="refresh-button"></i>
+                <div class="color-options" id="color-options">
                     <form id="color-options-form" onsubmit="event.preventDefault()">
                         <label for="color-picker" form="color-options-form">Color:</label>
                         <input type="color" id="color-picker" form="color-options-form">
@@ -50,7 +52,11 @@
                         <label for="color-number" form="color-options-form">Number of colors:</label>
                         <input type="number" id="color-number" name="tentacles" min="2" max="10" value="5">
                     </form>
-
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
                 <div class="tips-area">
                     You can use spacebar to quickly generate a new palette!
