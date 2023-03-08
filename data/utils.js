@@ -62,10 +62,10 @@ function windowChanges() {
     const pixelWidth = window.innerWidth
     const colorCount = document.getElementById('color-number').value
     if (pixelWidth/colorCount < 100) {
-        addAllSmallClasses()
         removeAllMediumClasses()
+        addAllSmallClasses()
     }
-    else if (pixelWidth/colorCount > 100 && pixelWidth/colorCount < 140) {
+    else if (pixelWidth/colorCount >= 100 && pixelWidth/colorCount <= 140) {
         removeAllSmallClasses()
         addAllMediumClasses()
     }
@@ -80,7 +80,6 @@ function windowChanges() {
         removeAllSmallClasses()
         removeAllMediumClasses()
     }
-
 }
 
 function addAllSmallClasses() {

@@ -53,13 +53,13 @@ function onLoadState() {
     document.getElementById('color-options-dd').value = modesArray[randomIntFromInterval(0,7)]
     fetchColors()
     refreshButton()
-    windowChanges()
 }
 
 window.onload = function () {
     setTimeout( () => {
         document.getElementsByTagName('header')[0].style.transform = 'unset'
         document.getElementsByTagName('main')[0].style.opacity = '100'
+        windowChanges()
     }, 800)
     onLoadState()
 }
