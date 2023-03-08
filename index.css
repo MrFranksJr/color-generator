@@ -5,7 +5,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
@@ -13,7 +12,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     font-family: 'Baloo Tamma 2', cursive;
-    min-height: 100vh;
 }
 
 header {
@@ -230,10 +228,10 @@ select {
     .color-options {
         position: relative;
         top: 30px;
-        width: 50%;
+        width: 90%;
         margin: 0 auto;
         height: 350px;
-        background-color: #027B93;
+        background-color: #444;
         padding: 1rem;
         border-radius: 6px;
         opacity: 0;
@@ -250,14 +248,13 @@ select {
     }
     form {
         position: relative;
-        width: 200%;
+        margin: 0 auto;
     }
     label {
         margin-top: 1.5rem;
     }
     input,
     select {
-        width: 100%;
         margin: 0;
     }
     #color-number {
@@ -304,7 +301,7 @@ select {
     }
 }
 
-@media (max-width:410px) {
+@media (max-width:420px) {
     h1 {
         font-size: 2rem;
     }

@@ -1,4 +1,4 @@
-export { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges/* calculateBarWidth */ }
+export { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges, convertStyle }
 
 const modesArray = [
     "monochrome",
@@ -61,8 +61,12 @@ const allCopyText = document.getElementsByClassName('copy-text')
 function windowChanges() {
     const pixelWidth = window.innerWidth
     const colorCount = document.getElementById('color-number').value
-
-    if (pixelWidth/colorCount < 100) {
+    if (pixelWidth > 630) {
+        if (colorArea.classList.contains('blur')) {
+            responsiveMenu()
+        }
+    }
+    else if (pixelWidth/colorCount < 100) {
         addAllSmallClasses()
         removeAllMediumClasses()
     }
@@ -136,4 +140,10 @@ function removeMediumClass(elemArray) {
     for (let elem of elemArray) {
         elem.classList.remove('medium')
     }
+}
+
+//SAFARI Bar Handler
+const convertStyle = () => {
+    const height = window.innerHeight;
+    document.body.style.height = `${height}px`
 }
