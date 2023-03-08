@@ -59,20 +59,23 @@ const allHexText = document.getElementsByClassName('hex-text')
 const allCopyText = document.getElementsByClassName('copy-text')
 
 function windowChanges() {
+    bodyResizer()
     const pixelWidth = window.innerWidth
     const colorCount = document.getElementById('color-number').value
-    if (pixelWidth > 630) {
-        if (colorArea.classList.contains('blur')) {
-            responsiveMenu()
-        }
-    }
-    else if (pixelWidth/colorCount < 100) {
+    if (pixelWidth/colorCount < 100) {
         addAllSmallClasses()
         removeAllMediumClasses()
     }
     else if (pixelWidth/colorCount > 100 && pixelWidth/colorCount < 140) {
         removeAllSmallClasses()
         addAllMediumClasses()
+    }
+    else if (pixelWidth/colorCount > 140 && pixelWidth > 630) {
+        if (colorArea.classList.contains('blur')) {
+            responsiveMenu()
+        }
+        removeAllSmallClasses()
+        removeAllMediumClasses()
     }
     else if (pixelWidth/colorCount > 140) {
         removeAllSmallClasses()

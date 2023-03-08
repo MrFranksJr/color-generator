@@ -1,4 +1,4 @@
-import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges, bodyResizer } from "./data/utils.js"
+import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges } from "./data/utils.js"
 import invert from 'invert-color'
 
 //consts and lets
@@ -17,7 +17,6 @@ function fetchColors() {
         .then(data => {
             colorsArray = data.colors
             renderColors(colorsArray)
-            windowChanges()
         })
 }
 
@@ -53,6 +52,7 @@ function onLoadState() {
     document.getElementById('color-options-dd').value = modesArray[randomIntFromInterval(0,7)]
     fetchColors()
     refreshButton()
+    windowChanges()
 }
 
 window.onload = function () {
@@ -61,7 +61,6 @@ window.onload = function () {
         document.getElementsByTagName('main')[0].style.opacity = '100'
     }, 800)
     onLoadState()
-    bodyResizer()
 }
 
 //eventlisteners
@@ -87,5 +86,4 @@ document.getElementById('refresh-button').addEventListener("click", onLoadState)
 
 window.addEventListener("resize", () => {
     windowChanges()
-    bodyResizer()
 })
