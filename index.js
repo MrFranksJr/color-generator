@@ -1,4 +1,4 @@
-import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges } from "./data/utils.js"
+import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges, bodyResizer } from "./data/utils.js"
 import invert from 'invert-color'
 
 //consts and lets
@@ -48,6 +48,7 @@ function buildColorHtml(array) {
 }
 
 function onLoadState() {
+    bodyResizer()
     document.getElementById('color-picker').value = getRandomColor()
     document.getElementById('color-options-dd').value = modesArray[randomIntFromInterval(0,7)]
     fetchColors()
@@ -85,5 +86,6 @@ document.getElementById('hamburger').addEventListener("click", responsiveMenu)
 document.getElementById('refresh-button').addEventListener("click", onLoadState)
 
 window.addEventListener("resize", () => {
+    bodyResizer()
     windowChanges()
 })

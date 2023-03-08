@@ -59,7 +59,6 @@ const allHexText = document.getElementsByClassName('hex-text')
 const allCopyText = document.getElementsByClassName('copy-text')
 
 function windowChanges() {
-    bodyResizer()
     const pixelWidth = window.innerWidth
     const colorCount = document.getElementById('color-number').value
     if (pixelWidth/colorCount < 100) {
@@ -81,6 +80,7 @@ function windowChanges() {
         removeAllSmallClasses()
         removeAllMediumClasses()
     }
+
 }
 
 function addAllSmallClasses() {

@@ -10,7 +10,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'Baloo Tamma 2', cursive;
 }
 
@@ -47,7 +47,6 @@ main {
     flex-grow: 1;
     transition: 0.5s;
     opacity: 0;
-    max-height: 100%;
 }
 
 .options-bar {
@@ -90,7 +89,7 @@ form {
 
 .color-area {
     display: flex;
-    flex: 1;
+    flex-grow: 1;
     height: 100%;
     transition: filter 0.2s ease-in-out;
 }
