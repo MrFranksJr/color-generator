@@ -1,4 +1,4 @@
-export { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges, convertStyle }
+export { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges, bodyResizer }
 
 const modesArray = [
     "monochrome",
@@ -143,7 +143,7 @@ function removeMediumClass(elemArray) {
 }
 
 //SAFARI Bar Handler
-const convertStyle = () => {
+const bodyResizer = () => {
     const height = window.innerHeight;
     document.body.style.height = `${height}px`
 }

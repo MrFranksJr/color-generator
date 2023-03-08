@@ -1,4 +1,4 @@
-import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges, convertStyle } from "./data/utils.js"
+import { getRandomColor, modesArray, randomIntFromInterval, clickToCopy, responsiveMenu, refreshButton, windowChanges, bodyResizer } from "./data/utils.js"
 import invert from 'invert-color'
 
 //consts and lets
@@ -61,7 +61,7 @@ window.onload = function () {
         document.getElementsByTagName('main')[0].style.opacity = '100'
     }, 800)
     onLoadState()
-    convertStyle()
+    bodyResizer()
 }
 
 //eventlisteners
@@ -87,5 +87,5 @@ document.getElementById('refresh-button').addEventListener("click", onLoadState)
 
 window.addEventListener("resize", () => {
     windowChanges()
-    convertStyle()
+    bodyResizer()
 })
