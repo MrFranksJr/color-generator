@@ -2,7 +2,7 @@
 <img alt="banner image" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/color-generator/Banner.png">
 </p>
 
-*Feb 28, 2022 - Franky Jr Blondeel*
+*Mar 07, 2023 - Franky Jr Blondeel*
 
 # Color Pal – your friend in color generation
 
