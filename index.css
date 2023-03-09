@@ -227,6 +227,7 @@ select {
     .color-options {
         position: relative;
         top: 30px;
+        right: -500px;
         width: 90%;
         margin: 0 auto;
         height: 350px;
@@ -369,4 +370,5 @@ select {
 .color-options.active {
     opacity: 100;
     transition: 0.2s ease-in-out;
+    right: unset;
 }
