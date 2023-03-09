@@ -25,7 +25,7 @@ I'll dive into some more details about this specific project below.
 
 Some basic requirements were given to start this Solo Project. The usage of the color input is something I hadn't seen before, nice to know what cool tools are given by modern browser to allow you to quickly select a color.
 <p align="center">
-<img alt="requirements" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/color-generator/requiements.png">
+<img alt="requirements" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/color-generator/requirements.png">
 </p>
 
 So as you can see, the requirements were kind of basic, asking for a simple button to lookup the color, and displaying the hex values of the colors, with a stretch goal of allowing the user to copy them to the clipboard.
@@ -125,8 +125,3 @@ Below are a couple of examples of the result. Quite proud of this one. Cracking 
 <p align="center">
 <img alt="responsive to adding extra colors" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/color-generator/extraColors.gif">
 </p>
-
-
-## Conclusion
-There's still a couple of features that I could add, but to I would not call these extremely relevant.
-Wanted to add a darkmode feature. 
