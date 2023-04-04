@@ -10,7 +10,7 @@
 
 **Live version [here](https://colorpal-generator.netlify.app/)**
 
-colorpal is a little app app I developed as part of Module 8 of the Front-Developer Career Path over at [scrimba.com](https://scrimba.com). It focuses on using API calls, this time using the [ColorAPI](https://www.thecolorapi.com/).
+colorpal is a little app I developed as part of Module 8 of the Front-Developer Career Path over at [scrimba.com](https://scrimba.com). It focuses on using API calls, this time using the [ColorAPI](https://www.thecolorapi.com/).
 It's an app with a similar purpose as for instance [coolors.co](https://coolors.co), where you can quickly generate a nice matching set of colors, based on some algorithm of choice. 
 
 This color generator project was a nice closure to a very interesting chapter of the course. Basically applying what we have seen before. I'll list the topics once more below, you can also find some more detail in my BlogSpace repository.
